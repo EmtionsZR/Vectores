@@ -22,6 +22,7 @@ namespace AppVectorea
             }
             Console.WriteLine("2 Elevado a la 5 es  igual a: {0}", potencia2(2, 5));
             vectorinicial();
+            VectorClases();
             Console.ReadKey();
             }
         public static double potencia (double x, int y)
@@ -76,6 +77,15 @@ namespace AppVectorea
             }
             Console.WriteLine("La sumatoria es: {0}",s);
             Console.WriteLine("El promedio es: {0}", s/x.Length);
+        }
+        public static void VectorClases()
+        {
+            int[] x = new int[10];
+            int z = 0;
+            if (z >= 1 && z <= 1000)
+                for(int i=0;i<x.Length;i++)
+                Console.Write("\nIngrese un numero: ");
+                z = int.Parse(Console.ReadLine());
         }
     }
 }
