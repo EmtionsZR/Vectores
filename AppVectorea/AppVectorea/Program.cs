@@ -22,7 +22,7 @@ namespace AppVectorea
             }
             Console.WriteLine("2 Elevado a la 5 es  igual a: {0}", potencia2(2, 5));
             vectorinicial();
-            VectorClases();
+            TareaVector();
             Console.ReadKey();
             }
         public static double potencia (double x, int y)
@@ -76,16 +76,42 @@ namespace AppVectorea
                 s = s + x[i];
             }
             Console.WriteLine("La sumatoria es: {0}",s);
-            Console.WriteLine("El promedio es: {0}", s/x.Length);
+            Console.WriteLine("El promedio es: {0}\n", s/x.Length);
         }
-        public static void VectorClases()
+        public static void TareaVector()
         {
-            int[] x = new int[10];
-            int z = 0;
-            if (z >= 1 && z <= 1000)
-                for(int i=0;i<x.Length;i++)
-                Console.Write("\nIngrese un numero: ");
-                z = int.Parse(Console.ReadLine());
+            int[] vec = new int[10];
+            int mayor = vec[0], menor = vec[0];
+
+            for (int i = 0; i < vec.Length; i++)
+            {
+                while (vec[i] < 1 || vec[i] > 1000)
+                {
+                    Console.Write("Ingrese valor {0} del vector: ", i + 1);
+                    vec[i] = Int32.Parse(Console.ReadLine());
+                }
+
+            }
+            for (int i = 0; i < vec.Length; i++)
+            {
+                if (vec[i] > mayor)
+                {
+                    mayor = vec[i];
+                }
+            }
+            menor = mayor;
+            for (int i = 0; i < vec.Length; i++)
+            {
+                if (vec[i] < menor)
+                {
+                    menor = vec[i];
+                }
+            }
+
+
+            Console.WriteLine("El numero mayor es: " + mayor);
+            Console.WriteLine("El numero menor es: " + menor);
+            Console.WriteLine("\n\tRafael Scatizzi\n ________________________________\n");
         }
     }
 }
